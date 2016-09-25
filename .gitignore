@@ -1,0 +1,9 @@
+.DS_Store
+
+### Java ###
+*.class
+
+### JetBrains IntelliJ ###
+*.iml
+.idea/
+out/
