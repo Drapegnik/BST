@@ -1,3 +1,5 @@
+package tree;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -5,6 +7,13 @@ import java.util.HashMap;
  * Created by Drapegnik on 20.11.15.
  */
 public class BinaryTree<T extends Comparable> {
+    private BinaryNode<T> root;
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_RED = "\u001B[31m";
+    private static final String empty = "  ";
+
     public BinaryTree() {
         this.root = null;
     }
@@ -26,13 +35,6 @@ public class BinaryTree<T extends Comparable> {
         BinaryNode<T> left, right;
 
     }
-
-    private BinaryNode<T> root;
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_CYAN = "\u001B[36m";
-    private static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_RED = "\u001B[31m";
-    private static final String empty = "  ";
 
     public void add(T value) throws InterruptedException {
         root = add(root, value);
@@ -206,7 +208,7 @@ public class BinaryTree<T extends Comparable> {
     private void go(BinaryNode<T> node, int level) {
         if (level > height(root))
             return;
-        if (node == root)
+        if (node.equals(root))
             addToMap(level, node.value.toString());
 
         if (node.left != null) {
