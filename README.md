@@ -1,4 +1,7 @@
 # BST
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/98f929e484504948af1cbf52efa0bd08)](https://www.codacy.com/app/Drapegnik/BST?utm_source=github.com&utm_medium=referral&utm_content=Drapegnik/BST&utm_campaign=badger)
+
 Binary Search Tree with console visualization on Java
 
 **implemented features**:
