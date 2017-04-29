@@ -8,6 +8,8 @@ import java.util.HashMap;
  */
 public class BinaryTree<T extends Comparable> {
     private BinaryNode<T> root;
+    private HashMap<Integer, ArrayList<String>> a = new HashMap<>();
+
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_CYAN = "\u001B[36m";
     private static final String ANSI_YELLOW = "\u001B[33m";
@@ -19,6 +21,9 @@ public class BinaryTree<T extends Comparable> {
     }
 
     public class BinaryNode<T extends Comparable> {
+        private T value;
+        private BinaryNode<T> left, right;
+
         public BinaryNode() {
             this.value = null;
             this.left = null;
@@ -30,10 +35,6 @@ public class BinaryTree<T extends Comparable> {
             this.left = null;
             this.right = null;
         }
-
-        T value;
-        BinaryNode<T> left, right;
-
     }
 
     public void add(T value) throws InterruptedException {
@@ -196,8 +197,6 @@ public class BinaryTree<T extends Comparable> {
             max = Math.max(max, height(node.right));
         return ++max;
     }
-
-    private HashMap<Integer, ArrayList<String>> a = new HashMap<>();
 
     private void addToMap(int key, String value) {
         if (a.get(key) == null)
